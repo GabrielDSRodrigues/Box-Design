@@ -24,14 +24,18 @@ range.def();
 let element = {
   elm: id("box-element"),
   code: id("code-attributes"),
-  boxShadow: "#EFEFEF",
-  boxShadowColor: "#EFEFEF",
+  boxShadow: {
+    x: 0,
+    y: 0,
+    l: 0,
+    color: "#EFEFEF"
+  },
   borderRadius: "0",
   rgba: {
     r: 255,
     g: 255,
     b: 255,
-    a: 1
+    a: 1,
   },
   padding: "0",
   height: "",
@@ -39,14 +43,15 @@ let element = {
   atl: function() {
 
     let rgba = `rgba(${this.rgba.r},${this.rgba.g},${this.rgba.b},${this.rgba.a})`;
+    let boxShadow = `${this.boxShadow.x}px ${this.boxShadow.y}px ${this.boxShadow.l}px ${this.boxShadow.color}`;
 
-    this.elm.style.boxShadow = this.boxShadow;
+    this.elm.style.boxShadow = boxShadow;
     this.elm.style.borderRadius = this.borderRadius;
     this.elm.style.padding = this.padding;
     this.elm.style.backgroundColor = rgba;
 
     this.code.innerHTML = `
-      <p>&emsp;box-shadow: <b>${this.boxShadow}</b>;</p>
+      <p>&emsp;box-shadow: <b>${boxShadow}</b>;</p>
       <p>&emsp;border-radius: <b>${this.borderRadius}</b>;</p>
       <p>&emsp;background-color: <b>${rgba}</b>;</p>
       <p>&emsp;padding: <b>${this.padding}</b>;</p>
@@ -57,17 +62,31 @@ let element = {
 
 /////
 
-
 // Controle da cor do Box-shadow
 let shadowColor = id("box-shadow-color");
 shadowColor.addEventListener("change", function() {
-  element.boxShadowColor = this.value;
+  element.boxShadow.color = this.value;
+  element.atl();
 });
 
-// Conteole do Box-shadow
+// Controle do Box-shadow
 let shadow = id("box-shadow");
 shadow.addEventListener("change", function() {
-  element.boxShadow = `0 0 ${this.value}px ${element.boxShadowColor}`;
+  element.boxShadow.l = this.value;
+  element.atl();
+});
+
+// Controle do eixo x Box-shadow
+let shadowX = id("box-shadow-x");
+shadowX.addEventListener("change", function() {
+  element.boxShadow.x = this.value;
+  element.atl();
+});
+
+// Controle do eixo y Box-shadow
+let shadowY = id("box-shadow-y");
+shadowY.addEventListener("change", function() {
+  element.boxShadow.y = this.value;
   element.atl();
 });
 
