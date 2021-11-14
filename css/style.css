@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 250px;
+  height: 14px;
+  border-radius: 8px;
+  margin: 1rem;
+  background: #44959D;
+  outline: none;
+  transition: 0.8s;
+}
+
+input[type="range"]:hover {
+  background: #0A666F;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #28676D;
+  border: none;
+}
+
+input[type="range"]::-ms-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #28676D;
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  all: unset;
+  -webkit-appearance: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #28676D;
+  box-shadow: 0 0 4px #293435;
+}
+
+input[type="color"] {
+  background: none;
+  border: none;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border: 1px solid #708A98;
+  border-radius: 4px;
+}
+
+.container {
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.box {
+  float: right;
+  height: 100%;
+  width: 50%;
+  background: #FFF;
+}
+
+.confg {
+  height: 100%;
+  width: calc(50% - 3px);
+  background: #273C43;
+  float: left;
+  overflow-y: scroll;
+  border-right: 3px solid #425257;
+}
+
+.confg::-webkit-scrollbar {
+  display: none;
+}
+
+.confg-opt {
+  border: 1px solid #425257;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: max-content;
+  border-radius: 4px;
+  color: #FFF;
+  width: 80%;
+  text-align: center;
+}
+
+.range-values {
+  color: #FFF;
+}
+
+#box-element {
+  width: 300px;
+  height: 200px;
+  background: #FFF;
+  border-radius: 4px;
+  margin: 3rem auto;
+}
+
+#code {
+  margin: 1rem auto;
+  box-shadow: 0 0 4px #BEC0C1;
+  padding: 1rem;
+  background: #1A4149;
+  width: 350px;
+}
+
+#code p {
+  color: #7CB9C6;
+}
+
+#code-attributes p {
+  color: #3293A9;
+}
+
+#code-attributes b {
+  color: #6FE5FF;
+}

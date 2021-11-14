@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>BOX DESIGN</title>
+  <link rel="icon" href="imgs/icon.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Easily style your box or card">
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div id="box-element">
+        <h1>Lorem ipsum</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet urna sem. Aenean a arcu tincidunt, tempus magna eu, placerat sapien.
+      </div>
+      <div id="code">
+        <p>
+          <p>.element {</p>
+          <div id="code-attributes">
+          </div>
+          <p>}</p>
+        </p>
+      </div>
+    </div>
+    <div class="confg">
+      <div class="confg-opt">
+        <h2>Box-Shadow</h2>
+        <input type="color" id="box-shadow-color">
+        <input type="range" class="range" min="0" step="0.1" value="0" max="100" id="box-shadow">
+      </div>
+      <div class="confg-opt">
+        <h2>Border-radius</h2>
+        <input type="range" class="range" min="0" step="0.1" value="0" max="100" id="border-radius">
+      </div>
+      <div class="confg-opt">
+        <h2>RGBA</h2>
+        <label for="background-color">R</label>
+        <input type="range" class="range" min="0" step="1" value="255" max="255" id="rgba-r">
+        <br>
+        <label for="background-color">G</label>
+        <input type="range" class="range" min="0" step="1" value="255" max="255" id="rgba-g">
+        <br>
+        <label for="background-color">B</label>
+        <input type="range" class="range" min="0" step="1" value="255" max="255" id="rgba-b">
+        <br>
+        <label for="background-color">A</label>
+        <input type="range" class="range" min="0" step="0.01" value="1" max="1" id="rgba-a">
+      </div>
+      <div class="confg-opt">
+        <h2>Padding</h2>
+        <input type="range" class="range" min="0" step="0.1" value="0" max="100" id="padding">
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
