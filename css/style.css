@@ -83,7 +83,6 @@ input[type="color"]::-webkit-color-swatch {
   float: right;
   height: 100%;
   width: 50%;
-  background: #FFF;
 }
 
 .confg {
@@ -127,7 +126,7 @@ input[type="color"]::-webkit-color-swatch {
   box-shadow: 0 0 4px #BEC0C1;
   padding: 1rem;
   background: #1A4149;
-  width: 350px;
+  width: max-content;
 }
 
 #code p {

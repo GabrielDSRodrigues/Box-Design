@@ -31,29 +31,22 @@ let element = {
     color: "#EFEFEF"
   },
   borderRadius: "0",
-  rgba: {
-    r: 255,
-    g: 255,
-    b: 255,
-    a: 1,
-  },
+  background: "#FFF",
   padding: "0",
   height: "",
   width: "",
   atl: function() {
-
-    let rgba = `rgba(${this.rgba.r},${this.rgba.g},${this.rgba.b},${this.rgba.a})`;
     let boxShadow = `${this.boxShadow.x}px ${this.boxShadow.y}px ${this.boxShadow.l}px ${this.boxShadow.color}`;
 
     this.elm.style.boxShadow = boxShadow;
     this.elm.style.borderRadius = this.borderRadius;
     this.elm.style.padding = this.padding;
-    this.elm.style.backgroundColor = rgba;
+    this.elm.style.background = this.background;
 
     this.code.innerHTML = `
       <p>&emsp;box-shadow: <b>${boxShadow}</b>;</p>
       <p>&emsp;border-radius: <b>${this.borderRadius}</b>;</p>
-      <p>&emsp;background-color: <b>${rgba}</b>;</p>
+      <p>&emsp;background: <b>${this.background}</b>;</p>
       <p>&emsp;padding: <b>${this.padding}</b>;</p>
     `;
   }
@@ -121,25 +114,67 @@ let rgba = {
   r: id("rgba-r"),
   g: id("rgba-g"),
   b: id("rgba-b"),
-  a: id("rgba-a")
+  a: id("rgba-a"),
+  color: {
+    r: 255,
+    g: 255,
+    b: 255,
+    a: 1
+  },
+  def: function() {
+    element.background = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a})`;
+  }
 }
 
 rgba.r.addEventListener("change", function() {
-  element.rgba.r = this.value;
+  rgba.color.r = this.value;
+  rgba.def();
   element.atl();
 });
 
 rgba.g.addEventListener("change", function() {
-  element.rgba.g = this.value;
+  rgba.color.g = this.value;
+  rgba.def();
   element.atl();
 });
 
 rgba.b.addEventListener("change", function() {
-  element.rgba.b = this.value;
+  rgba.color.b = this.value;
+  rgba.def();
   element.atl();
 });
 
 rgba.a.addEventListener("change", function() {
-  element.rgba.a = this.value;
+  rgba.color.a = this.value;
+  rgba.def();
+  element.atl();
+});
+
+
+/////
+
+
+// Controle da cor do Elemento em gradiente
+let bgGradient = {
+  color1: id("background-gradient-color1"),
+  color2: id("background-gradient-color2"),
+  angulo: id("background-gradient-angulo"),
+  def: function() {
+    element.background = `linear-gradient(${this.angulo.value}deg, ${this.color1.value}, ${this.color2.value})`;
+  }
+}
+
+bgGradient.color1.addEventListener("change", function() {
+  bgGradient.def();
+  element.atl();
+});
+
+bgGradient.color2.addEventListener("change", function() {
+  bgGradient.def();
+  element.atl();
+});
+
+bgGradient.angulo.addEventListener("change", function() {
+  bgGradient.def();
   element.atl();
 });
